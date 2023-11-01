@@ -1,5 +1,5 @@
 package org.example;
 
 public enum Gender {
-    male, female
+    m, f
 }

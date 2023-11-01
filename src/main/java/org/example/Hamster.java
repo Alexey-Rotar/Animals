@@ -22,4 +22,14 @@ public class Hamster extends Pet {
     public void chew() {
         System.out.printf("%s is chewing...\n", getName());
     }
+
+    @Override
+    public String toString() {
+        return "[Вид: хомяки, кличка: " + name +
+                ", дата рождения: " + dob +
+                ", пол: " + gender +
+                ", владелец: " + owner +
+                ", окрас: " + color +
+                ']';
+    }
 }

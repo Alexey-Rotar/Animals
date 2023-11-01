@@ -18,4 +18,14 @@ public class Donkey extends PackAnimal {
     public void pull() {
         System.out.printf("%s is pulling...\n", getName());
     }
+
+    @Override
+    public String toString() {
+        return "[Вид: ослы, кличка: " + name +
+                ", дата рождения: " + dob +
+                ", пол: " + gender +
+                ", владелец: " + owner +
+                ", окрас: " + color +
+                ']';
+    }
 }

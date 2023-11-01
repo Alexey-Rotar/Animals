@@ -18,4 +18,14 @@ public class Camel extends PackAnimal {
     public void gallop() {
         System.out.printf("%s is walking...\n", getName());
     }
+
+    @Override
+    public String toString() {
+        return "[Вид: верблюды, кличка: " + name +
+                ", дата рождения: " + dob +
+                ", пол: " + gender +
+                ", владелец: " + owner +
+                ", окрас: " + color +
+                ']';
+    }
 }

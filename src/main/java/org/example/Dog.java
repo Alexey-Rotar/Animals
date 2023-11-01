@@ -30,4 +30,14 @@ public class Dog extends Pet {
     public void swim() {
         System.out.printf("%s is swimming...\n", getName());
     }
+
+    @Override
+    public String toString() {
+        return "[Вид: собаки, кличка: " + name +
+                ", дата рождения: " + dob +
+                ", пол: " + gender +
+                ", владелец: " + owner +
+                ", окрас: " + color +
+                ']';
+    }
 }

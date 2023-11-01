@@ -22,4 +22,14 @@ public class Cat extends Pet {
     public void play() {
         System.out.printf("%s is playing...\n", getName());
     }
+
+    @Override
+    public String toString() {
+        return "[Вид: кошки, кличка: " + name +
+                ", дата рождения: " + dob +
+                ", пол: " + gender +
+                ", владелец: " + owner +
+                ", окрас: " + color +
+                ']';
+    }
 }

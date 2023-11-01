@@ -7,8 +7,8 @@ public class Horse extends PackAnimal {
         super (dob, gender, name, owner, color);
     }
 
-    public void neighs() {
-        System.out.printf("%s is neighsing...\n", getName());
+    public void neigh() {
+        System.out.printf("%s is neighing...\n", getName());
     }
 
     public void ride() {
@@ -21,5 +21,15 @@ public class Horse extends PackAnimal {
 
     public void plow() {
         System.out.printf("%s is plowing...\n", getName());
+    }
+
+    @Override
+    public String toString() {
+        return "[Вид: лошади, кличка: " + name +
+                ", дата рождения: " + dob +
+                ", пол: " + gender +
+                ", владелец: " + owner +
+                ", окрас: " + color +
+                ']';
     }
 }
