@@ -62,6 +62,7 @@ public class Console {
             System.out.println("- пусто -");
         else
             printAnimals(animals);
+        System.out.println("Всего животных: " + animals.size());
         System.out.println();
         System.out.println("-1 - Вернуться в предыдущее меню");
         System.out.println(" 0 - Завершение работы");
