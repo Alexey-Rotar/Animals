@@ -3,9 +3,14 @@ package org.example;
 import java.time.LocalDate;
 
 public class Cat extends Pet {
-    public Cat(LocalDate dob, String gender, String name, String owner, String color) {
+    String cmds;
+
+    public Cat(LocalDate dob, String gender, String name, String owner, String color, String cmds) {
         super (dob, gender, name, owner, color);
+        this.cmds=cmds;
     }
+
+    public String getCmds() { return cmds; }
 
     public void meow() {
         System.out.printf("%s is meowing...\n", getName());
@@ -25,11 +30,20 @@ public class Cat extends Pet {
 
     @Override
     public String toString() {
-        return "[Вид: кошки, кличка: " + name +
+        return "Кошка [кличка: " + name +
                 ", дата рождения: " + dob +
                 ", пол: " + gender +
                 ", владелец: " + owner +
-                ", окрас: " + color +
-                ']';
+                ", окрас: " + color +']';
+    }
+
+    @Override
+    public String getInfo() {
+        return cmds;
+    }
+
+    @Override
+    public void setData(String cmds) {
+        this.cmds = cmds;
     }
 }

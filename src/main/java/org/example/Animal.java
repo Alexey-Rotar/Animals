@@ -14,7 +14,9 @@ class Animal {
         this.gender=gender;
     }
 
-    public void display() {
-        System.out.println(dob + ": " + gender);
+    public String getInfo() { return "Animal " + dob + ": " + gender; }
+
+    public void setData(String gender) {
+        this.gender = gender;
     }
 }

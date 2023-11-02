@@ -3,9 +3,14 @@ package org.example;
 import java.time.LocalDate;
 
 public class Horse extends PackAnimal {
-    public Horse(LocalDate dob, String gender, String name, String owner, String color) {
+    String cmds;
+
+    public Horse(LocalDate dob, String gender, String name, String owner, String color, String cmds) {
         super (dob, gender, name, owner, color);
+        this.cmds=cmds;
     }
+
+    public String getCmds() { return cmds; }
 
     public void neigh() {
         System.out.printf("%s is neighing...\n", getName());
@@ -25,11 +30,20 @@ public class Horse extends PackAnimal {
 
     @Override
     public String toString() {
-        return "[Вид: лошади, кличка: " + name +
+        return "Лошадь [кличка: " + name +
                 ", дата рождения: " + dob +
                 ", пол: " + gender +
                 ", владелец: " + owner +
-                ", окрас: " + color +
-                ']';
+                ", окрас: " + color +']';
+    }
+
+    @Override
+    public String getInfo() {
+        return cmds;
+    }
+
+    @Override
+    public void setData(String cmds) {
+        this.cmds = cmds;
     }
 }

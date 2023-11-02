@@ -3,9 +3,14 @@ package org.example;
 import java.time.LocalDate;
 
 public class Hamster extends Pet {
-    public Hamster(LocalDate dob, String gender, String name, String owner, String color) {
+    String cmds;
+
+    public Hamster(LocalDate dob, String gender, String name, String owner, String color, String cmds) {
         super (dob, gender, name, owner, color);
+        this.cmds=cmds;
     }
+
+    public String getCmds() { return cmds; }
 
     public void gnaw() {
         System.out.printf("%s is gnawing...\n", getName());
@@ -25,11 +30,21 @@ public class Hamster extends Pet {
 
     @Override
     public String toString() {
-        return "[Вид: хомяки, кличка: " + name +
+        return "Хомяк [кличка: " + name +
                 ", дата рождения: " + dob +
                 ", пол: " + gender +
                 ", владелец: " + owner +
-                ", окрас: " + color +
-                ']';
+                ", окрас: " + color +']';
     }
+
+    @Override
+    public String getInfo() {
+        return cmds;
+    }
+
+    @Override
+    public void setData(String cmds) {
+        this.cmds = cmds;
+    }
+
 }

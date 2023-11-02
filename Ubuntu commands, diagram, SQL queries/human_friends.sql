@@ -1,6 +1,6 @@
-﻿-- DROP DATABASE IF EXISTS human_friends;
--- CREATE DATABASE human_friends;
--- USE human_friends;
+﻿DROP DATABASE IF EXISTS human_friends;
+CREATE DATABASE human_friends;
+USE human_friends;
 
 DROP TABLE IF EXISTS animal;
 CREATE TABLE animal (

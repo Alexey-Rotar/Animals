@@ -21,4 +21,5 @@ class Pet extends Animal {
     public void move() {
         System.out.printf("%s is moving!\n", getName());
     }
+
 }

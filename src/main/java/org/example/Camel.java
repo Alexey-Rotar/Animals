@@ -3,9 +3,14 @@ package org.example;
 import java.time.LocalDate;
 
 public class Camel extends PackAnimal {
-    public Camel(LocalDate dob, String gender, String name, String owner, String color) {
+    String cmds;
+
+    public Camel(LocalDate dob, String gender, String name, String owner, String color, String cmds) {
         super (dob, gender, name, owner, color);
+        this.cmds=cmds;
     }
+
+    public String getCmds() { return cmds; }
 
     public void lie() {
         System.out.printf("%s is lying...\n", getName());
@@ -21,11 +26,20 @@ public class Camel extends PackAnimal {
 
     @Override
     public String toString() {
-        return "[Вид: верблюды, кличка: " + name +
+        return "Верблюд [кличка: " + name +
                 ", дата рождения: " + dob +
                 ", пол: " + gender +
                 ", владелец: " + owner +
-                ", окрас: " + color +
-                ']';
+                ", окрас: " + color +']';
+    }
+
+    @Override
+    public String getInfo() {
+        return cmds;
+    }
+
+    @Override
+    public void setData(String cmds) {
+        this.cmds = cmds;
     }
 }

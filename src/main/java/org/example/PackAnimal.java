@@ -21,4 +21,5 @@ class PackAnimal extends Animal {
     public void graze() {
         System.out.printf("%s is grazing!\n", getName());
     }
+
 }
