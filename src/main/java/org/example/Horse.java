@@ -5,12 +5,17 @@ import java.time.LocalDate;
 public class Horse extends PackAnimal {
     String cmds;
 
-    public Horse(LocalDate dob, String gender, String name, String owner, String color, String cmds) {
+    public String getCmds() { return cmds; }
+    public void setCmds(String cmds) { this.cmds = cmds; }
+
+    public Horse(LocalDate dob, Gender gender, String name, String owner, String color, String cmds) {
         super (dob, gender, name, owner, color);
         this.cmds=cmds;
     }
 
-    public String getCmds() { return cmds; }
+    public Horse() {
+        this (null, null, null, null, null, null);
+    }
 
     public void neigh() {
         System.out.printf("%s is neighing...\n", getName());
@@ -27,14 +32,12 @@ public class Horse extends PackAnimal {
     public void plow() {
         System.out.printf("%s is plowing...\n", getName());
     }
-
     @Override
     public String toString() {
-        return "Лошадь [кличка: " + name +
-                ", дата рождения: " + dob +
-                ", пол: " + gender +
-                ", владелец: " + owner +
-                ", окрас: " + color +']';
+        return "Лошадь [" + name +
+                ", " + dob +
+                ", " + gender +
+                ", " + color + "], владелец: " + owner;
     }
 
     @Override
@@ -42,8 +45,4 @@ public class Horse extends PackAnimal {
         return cmds;
     }
 
-    @Override
-    public void setData(String cmds) {
-        this.cmds = cmds;
-    }
 }

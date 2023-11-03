@@ -5,12 +5,17 @@ import java.time.LocalDate;
 public class Camel extends PackAnimal {
     String cmds;
 
-    public Camel(LocalDate dob, String gender, String name, String owner, String color, String cmds) {
+    public String getCmds() { return cmds; }
+    public void setCmds(String cmds) { this.cmds = cmds; }
+
+    public Camel(LocalDate dob, Gender gender, String name, String owner, String color, String cmds) {
         super (dob, gender, name, owner, color);
         this.cmds=cmds;
     }
 
-    public String getCmds() { return cmds; }
+    public Camel() {
+        this (null, null, null, null, null, null);
+    }
 
     public void lie() {
         System.out.printf("%s is lying...\n", getName());
@@ -26,11 +31,10 @@ public class Camel extends PackAnimal {
 
     @Override
     public String toString() {
-        return "Верблюд [кличка: " + name +
-                ", дата рождения: " + dob +
-                ", пол: " + gender +
-                ", владелец: " + owner +
-                ", окрас: " + color +']';
+        return "Верблюд [" + name +
+                ", " + dob +
+                ", " + gender +
+                ", " + color + "], владелец: " + owner;
     }
 
     @Override
@@ -38,8 +42,4 @@ public class Camel extends PackAnimal {
         return cmds;
     }
 
-    @Override
-    public void setData(String cmds) {
-        this.cmds = cmds;
-    }
 }

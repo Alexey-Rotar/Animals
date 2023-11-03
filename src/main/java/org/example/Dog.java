@@ -5,12 +5,17 @@ import java.time.LocalDate;
 public class Dog extends Pet {
     String cmds;
 
-    public Dog(LocalDate dob, String gender, String name, String owner, String color, String cmds) {
+    public String getCmds() { return cmds; }
+    public void setCmds(String cmds) { this.cmds = cmds; }
+
+    public Dog(LocalDate dob, Gender gender, String name, String owner, String color, String cmds) {
         super (dob, gender, name, owner, color);
         this.cmds=cmds;
     }
 
-    public String getCmds() { return cmds; }
+    public Dog() {
+        this (null, null, null, null, null, null);
+    }
 
     public void bark() {
         System.out.printf("%s is barking...\n", getName());
@@ -38,11 +43,10 @@ public class Dog extends Pet {
 
     @Override
     public String toString() {
-        return "Собака [кличка: " + name +
-                ", дата рождения: " + dob +
-                ", пол: " + gender +
-                ", владелец: " + owner +
-                ", окрас: " + color +']';
+        return "Собака [" + name +
+                ", " + dob +
+                ", " + gender +
+                ", " + color + "], владелец: " + owner;
     }
 
     @Override
@@ -50,8 +54,4 @@ public class Dog extends Pet {
         return cmds;
     }
 
-    @Override
-    public void setData(String cmds) {
-        this.cmds = cmds;
-    }
 }

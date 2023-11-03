@@ -5,12 +5,17 @@ import java.time.LocalDate;
 public class Donkey extends PackAnimal {
     String cmds;
 
-    public Donkey(LocalDate dob, String gender, String name, String owner, String color, String cmds) {
+    public String getCmds() { return cmds; }
+    public void setCmds(String cmds) { this.cmds = cmds; }
+
+    public Donkey(LocalDate dob, Gender gender, String name, String owner, String color, String cmds) {
         super (dob, gender, name, owner, color);
         this.cmds=cmds;
     }
 
-    public String getCmds() { return cmds; }
+    public Donkey() {
+        this (null, null, null, null, null, null);
+    }
 
     public void ia() {
         System.out.printf("%s is iaing...\n", getName());
@@ -26,11 +31,10 @@ public class Donkey extends PackAnimal {
 
     @Override
     public String toString() {
-        return "Осёл [кличка: " + name +
-                ", дата рождения: " + dob +
-                ", пол: " + gender +
-                ", владелец: " + owner +
-                ", окрас: " + color +']';
+        return "Осёл [" + name +
+                ", " + dob +
+                ", " + gender +
+                ", " + color + "], владелец: " + owner;
     }
 
     @Override
@@ -38,8 +42,4 @@ public class Donkey extends PackAnimal {
         return cmds;
     }
 
-    @Override
-    public void setData(String cmds) {
-        this.cmds = cmds;
-    }
 }
